@@ -1,0 +1,39 @@
+﻿  Reading Qt configuration (D:\Soft\Qt5.13\5.12.3\msvc2017_64\bin\qmake.exe)
+  uic ExerciseWidget.ui
+  uic TT.ui
+  rcc TT.qrc
+  moc TT.h
+  moc MyTreeWidget.h
+  moc AcceptWidget.h
+   RCC: Warning: No resources in 'F:\Exercise\Qt\HelloWorld\TT\TT\TT.qrc'.
+  moc TestTreeWidget.h
+  moc QtClass.h
+  moc CTreeWidget.h
+  moc ExerciseWidget.h
+  moc CustomDragLabel.h
+  moc DragProxy.h
+  AcceptWidget.cpp
+  CTreeWidget.cpp
+  CustomDragLabel.cpp
+  DragProxy.cpp
+  ExerciseWidget.cpp
+f:\exercise\qt\helloworld\tt\tt\ctreewidget.cpp(57): warning C4312: “类型强制转换”: 从“int”转换到更大的“void *”
+f:\exercise\qt\helloworld\tt\tt\ctreewidget.cpp(73): warning C4312: “类型强制转换”: 从“int”转换到更大的“void *”
+f:\exercise\qt\helloworld\tt\tt\ctreewidget.cpp(120): warning C4311: “<function-style-cast>”: 从“void *”到“int”的指针截断
+  main.cpp
+  MyTreeWidget.cpp
+  QtClass.cpp
+f:\exercise\qt\helloworld\tt\tt\mytreewidget.cpp(23): warning C4312: “类型强制转换”: 从“int”转换到更大的“void *”
+  TestTreeWidget.cpp
+  TT.cpp
+  qrc_TT.cpp
+  moc_TT.cpp
+  moc_MyTreeWidget.cpp
+  moc_AcceptWidget.cpp
+  moc_TestTreeWidget.cpp
+  moc_QtClass.cpp
+  moc_CTreeWidget.cpp
+  moc_ExerciseWidget.cpp
+  moc_CustomDragLabel.cpp
+  moc_DragProxy.cpp
+  TT.vcxproj -> F:\Exercise\Qt\HelloWorld\TT\x64\Release\TT.exe

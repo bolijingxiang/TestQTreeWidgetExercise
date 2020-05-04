@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>TTClass</class>
+ <widget class="QWidget" name="TTClass">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>833</width>
+    <height>619</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>TT</string>
+  </property>
+  <widget class="TestTreeWidget" name="treeWidget">
+   <property name="geometry">
+    <rect>
+     <x>420</x>
+     <y>130</y>
+     <width>411</width>
+     <height>441</height>
+    </rect>
+   </property>
+   <column>
+    <property name="text">
+     <string notr="true">1</string>
+    </property>
+   </column>
+  </widget>
+  <widget class="CTreeWidget" name="treeWidget_2">
+   <property name="geometry">
+    <rect>
+     <x>40</x>
+     <y>70</y>
+     <width>321</width>
+     <height>251</height>
+    </rect>
+   </property>
+   <column>
+    <property name="text">
+     <string notr="true">1</string>
+    </property>
+   </column>
+  </widget>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>TestTreeWidget</class>
+   <extends>QTreeWidget</extends>
+   <header>testtreewidget.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CTreeWidget</class>
+   <extends>QTreeWidget</extends>
+   <header>CTreeWidget.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources>
+  <include location="TT.qrc"/>
+ </resources>
+ <connections/>
+</ui>

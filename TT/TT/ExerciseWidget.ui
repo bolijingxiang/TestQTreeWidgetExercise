@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>ExerciseWidget</class>
+ <widget class="QTreeWidget" name="ExerciseWidget">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>742</width>
+    <height>596</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>ExerciseWidget</string>
+  </property>
+  <property name="autoScroll">
+   <bool>true</bool>
+  </property>
+  <property name="tabKeyNavigation">
+   <bool>true</bool>
+  </property>
+  <property name="dragEnabled">
+   <bool>true</bool>
+  </property>
+  <property name="dragDropOverwriteMode">
+   <bool>true</bool>
+  </property>
+  <property name="dragDropMode">
+   <enum>QAbstractItemView::DropOnly</enum>
+  </property>
+  <property name="defaultDropAction">
+   <enum>Qt::CopyAction</enum>
+  </property>
+  <property name="selectionMode">
+   <enum>QAbstractItemView::ExtendedSelection</enum>
+  </property>
+  <property name="selectionBehavior">
+   <enum>QAbstractItemView::SelectItems</enum>
+  </property>
+  <column>
+   <property name="text">
+    <string notr="true">1</string>
+   </property>
+  </column>
+  <widget class="MyTreeWidget" name="treeWidget">
+   <property name="geometry">
+    <rect>
+     <x>140</x>
+     <y>110</y>
+     <width>191</width>
+     <height>441</height>
+    </rect>
+   </property>
+   <column>
+    <property name="text">
+     <string>1</string>
+    </property>
+   </column>
+  </widget>
+  <widget class="QTreeWidget" name="treeWidget_2">
+   <property name="geometry">
+    <rect>
+     <x>430</x>
+     <y>320</y>
+     <width>256</width>
+     <height>192</height>
+    </rect>
+   </property>
+   <column>
+    <property name="text">
+     <string>1</string>
+    </property>
+   </column>
+   <item>
+    <property name="text">
+     <string>新建项目</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>新建项目</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>新建项目</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>新建项目</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>新建项目</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>新建项目</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>新建项目</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>11</string>
+    </property>
+   </item>
+  </widget>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>MyTreeWidget</class>
+   <extends>QTreeWidget</extends>
+   <header>mytreewidget.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>
