@@ -165,10 +165,14 @@ void MyTreeWidget::startDrag(Qt::DropActions supportedActions)
 	QTreeWidgetItem *item = currentItem();
 	if (item == NULL|| item->parent()==nullptr)
 		return;
-
-	QString pValue = QString::number(int((void*)item));
+	QString _strText = item->text(0);
+	int _temp=item->data(0,Qt::UserRole+1).value<int>();
+	//qDebug() << "_temp:" << _temp;
+	//QString pValue = QString::number(int((void*)item));
 	QByteArray itemData;
-	itemData = QVariant(pValue).toByteArray();
+	QDataStream dataStream(&itemData,QIODevice::WriteOnly);
+	dataStream << _strText<<_temp;
+	//itemData = QVariant(pValue).toByteArray();
 
 	QMimeData *mimeData = new QMimeData;
 	mimeData->setData("application/x-qabstractitemmodeldatalist", itemData);
@@ -185,7 +189,8 @@ void MyTreeWidget::startDrag(Qt::DropActions supportedActions)
 	QWidget* _te = new QWidget();
 	_te->setFixedSize(40, 40);
 	
-	QLabel* _label = new QLabel(QStringLiteral("ÎÒÆßºÅ·Å¼Ù"),_te);
+	QLabel* _label = new QLabel(_strText,_te);
+	_label->setAlignment(Qt::AlignCenter);
 	_label->setFixedSize(_te->width(), _te->height());
 	QPixmap pixmap=_te->grab();
 	//QPixmap pixmap = dragPiamap->grab();
@@ -344,7 +349,7 @@ void MyTreeWidget::createTreeWidget()
 	sprintf(str,"QTreeView::item{margin-right:%dpx;height:40px;background:#00FFFF;}",80);
 	//QString str = "QTreeView::item{margin-right:80px;height:40px;background:#00FFFF;}";
 	this->setStyleSheet(str);
-	for (int i=1;i<4;i++)
+	for (int i=0;i<4;i++)
 	{
 		//QString _ii = QString::number(i);
 		//QWidget* _btn = new QWidget(this);
@@ -364,7 +369,8 @@ void MyTreeWidget::createTreeWidget()
 		//MyQItemDelegate* _tt01 = new MyQItemDelegate(this);
 		//this->setItemDelegateForRow(i, _tt01);
 
-		QTreeWidgetItem* _subItem = new QTreeWidgetItem(_parentItem, QStringList(QString(QString::number(i))));
+		QTreeWidgetItem* _subItem = new QTreeWidgetItem(_parentItem, QStringList(QString(QString::number(i+1))));
+		_subItem->setData(0,Qt::UserRole+1,i);
 		//QTreeWidgetItem* _subItem01 = new QTreeWidgetItem(_subItem, QStringList(QString(QString::number(i+i*4))));
 		//_subItem->addChild(_subItem01);
 		_subItem->setTextAlignment(0,Qt::AlignCenter);

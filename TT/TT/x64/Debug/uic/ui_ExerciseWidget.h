@@ -12,6 +12,7 @@
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QHeaderView>
+#include <QtWidgets/QPushButton>
 #include <QtWidgets/QTreeWidget>
 #include "mytreewidget.h"
 
@@ -21,7 +22,8 @@ class Ui_ExerciseWidget
 {
 public:
     MyTreeWidget *treeWidget;
-    QTreeWidget *treeWidget_2;
+    QPushButton *readBtn;
+    QPushButton *saveBtn;
 
     void setupUi(QTreeWidget *ExerciseWidget)
     {
@@ -30,7 +32,7 @@ public:
         ExerciseWidget->setHeaderItem(__qtreewidgetitem);
         if (ExerciseWidget->objectName().isEmpty())
             ExerciseWidget->setObjectName(QString::fromUtf8("ExerciseWidget"));
-        ExerciseWidget->resize(742, 596);
+        ExerciseWidget->resize(836, 646);
         ExerciseWidget->setAutoScroll(true);
         ExerciseWidget->setTabKeyNavigation(true);
         ExerciseWidget->setDragEnabled(true);
@@ -41,18 +43,13 @@ public:
         ExerciseWidget->setSelectionBehavior(QAbstractItemView::SelectItems);
         treeWidget = new MyTreeWidget(ExerciseWidget);
         treeWidget->setObjectName(QString::fromUtf8("treeWidget"));
-        treeWidget->setGeometry(QRect(140, 110, 191, 441));
-        treeWidget_2 = new QTreeWidget(ExerciseWidget);
-        new QTreeWidgetItem(treeWidget_2);
-        new QTreeWidgetItem(treeWidget_2);
-        new QTreeWidgetItem(treeWidget_2);
-        new QTreeWidgetItem(treeWidget_2);
-        new QTreeWidgetItem(treeWidget_2);
-        new QTreeWidgetItem(treeWidget_2);
-        new QTreeWidgetItem(treeWidget_2);
-        new QTreeWidgetItem(treeWidget_2);
-        treeWidget_2->setObjectName(QString::fromUtf8("treeWidget_2"));
-        treeWidget_2->setGeometry(QRect(430, 320, 256, 192));
+        treeWidget->setGeometry(QRect(0, 0, 191, 441));
+        readBtn = new QPushButton(ExerciseWidget);
+        readBtn->setObjectName(QString::fromUtf8("readBtn"));
+        readBtn->setGeometry(QRect(730, 60, 75, 23));
+        saveBtn = new QPushButton(ExerciseWidget);
+        saveBtn->setObjectName(QString::fromUtf8("saveBtn"));
+        saveBtn->setGeometry(QRect(730, 20, 75, 23));
         if (ExerciseWidget->header()->objectName().isEmpty())
 
         retranslateUi(ExerciseWidget);
@@ -65,29 +62,8 @@ public:
         ExerciseWidget->setWindowTitle(QApplication::translate("ExerciseWidget", "ExerciseWidget", nullptr));
         QTreeWidgetItem *___qtreewidgetitem = treeWidget->headerItem();
         ___qtreewidgetitem->setText(0, QApplication::translate("ExerciseWidget", "1", nullptr));
-        QTreeWidgetItem *___qtreewidgetitem1 = treeWidget_2->headerItem();
-        ___qtreewidgetitem1->setText(0, QApplication::translate("ExerciseWidget", "1", nullptr));
-
-        const bool __sortingEnabled = treeWidget_2->isSortingEnabled();
-        treeWidget_2->setSortingEnabled(false);
-        QTreeWidgetItem *___qtreewidgetitem2 = treeWidget_2->topLevelItem(0);
-        ___qtreewidgetitem2->setText(0, QApplication::translate("ExerciseWidget", "\346\226\260\345\273\272\351\241\271\347\233\256", nullptr));
-        QTreeWidgetItem *___qtreewidgetitem3 = treeWidget_2->topLevelItem(1);
-        ___qtreewidgetitem3->setText(0, QApplication::translate("ExerciseWidget", "\346\226\260\345\273\272\351\241\271\347\233\256", nullptr));
-        QTreeWidgetItem *___qtreewidgetitem4 = treeWidget_2->topLevelItem(2);
-        ___qtreewidgetitem4->setText(0, QApplication::translate("ExerciseWidget", "\346\226\260\345\273\272\351\241\271\347\233\256", nullptr));
-        QTreeWidgetItem *___qtreewidgetitem5 = treeWidget_2->topLevelItem(3);
-        ___qtreewidgetitem5->setText(0, QApplication::translate("ExerciseWidget", "\346\226\260\345\273\272\351\241\271\347\233\256", nullptr));
-        QTreeWidgetItem *___qtreewidgetitem6 = treeWidget_2->topLevelItem(4);
-        ___qtreewidgetitem6->setText(0, QApplication::translate("ExerciseWidget", "\346\226\260\345\273\272\351\241\271\347\233\256", nullptr));
-        QTreeWidgetItem *___qtreewidgetitem7 = treeWidget_2->topLevelItem(5);
-        ___qtreewidgetitem7->setText(0, QApplication::translate("ExerciseWidget", "\346\226\260\345\273\272\351\241\271\347\233\256", nullptr));
-        QTreeWidgetItem *___qtreewidgetitem8 = treeWidget_2->topLevelItem(6);
-        ___qtreewidgetitem8->setText(0, QApplication::translate("ExerciseWidget", "\346\226\260\345\273\272\351\241\271\347\233\256", nullptr));
-        QTreeWidgetItem *___qtreewidgetitem9 = treeWidget_2->topLevelItem(7);
-        ___qtreewidgetitem9->setText(0, QApplication::translate("ExerciseWidget", "11", nullptr));
-        treeWidget_2->setSortingEnabled(__sortingEnabled);
-
+        readBtn->setText(QApplication::translate("ExerciseWidget", "read", nullptr));
+        saveBtn->setText(QApplication::translate("ExerciseWidget", "save", nullptr));
     } // retranslateUi
 
 };

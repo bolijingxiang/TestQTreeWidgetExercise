@@ -58,6 +58,12 @@
     <ClCompile Include="TypeKindParent.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="NodeWidget.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="NodeWidgetEvent.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="TT.h">
@@ -85,6 +91,12 @@
       <Filter>Header Files</Filter>
     </QtMoc>
     <QtMoc Include="DragProxy.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="NodeWidget.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="NodeWidgetEvent.h">
       <Filter>Header Files</Filter>
     </QtMoc>
   </ItemGroup>

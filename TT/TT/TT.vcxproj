@@ -87,6 +87,8 @@
     <ClCompile Include="ExerciseWidget.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MyTreeWidget.cpp" />
+    <ClCompile Include="NodeWidget.cpp" />
+    <ClCompile Include="NodeWidgetEvent.cpp" />
     <ClCompile Include="QtClass.cpp" />
     <ClCompile Include="TestTreeWidget.cpp" />
     <ClCompile Include="TT.cpp" />
@@ -127,6 +129,8 @@
     <QtMoc Include="DragProxy.h" />
   </ItemGroup>
   <ItemGroup>
+    <QtMoc Include="NodeWidget.h" />
+    <QtMoc Include="NodeWidgetEvent.h" />
     <ClInclude Include="Struct.h" />
     <ClInclude Include="TypeKindParent.h" />
   </ItemGroup>

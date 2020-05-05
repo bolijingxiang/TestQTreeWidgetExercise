@@ -1,10 +1,2 @@
-﻿  moc MyTreeWidget.h
-  ExerciseWidget.cpp
-  MyTreeWidget.cpp
-  TT.cpp
-  main.cpp
-f:\exercise\qt\helloworld\exerciseqtreewidget\tt\tt\exercisewidget.cpp(55): warning C4312: “类型强制转换”: 从“int”转换到更大的“void *”
-f:\exercise\qt\helloworld\exerciseqtreewidget\tt\tt\mytreewidget.cpp(169): warning C4311: “<function-style-cast>”: 从“void *”到“int”的指针截断
-  moc_ExerciseWidget.cpp
-  moc_MyTreeWidget.cpp
-  TT.vcxproj -> F:\Exercise\Qt\HelloWorld\ExerciseQTreeWidget\TT\x64\Debug\TT.exe
+﻿  DragProxy.cpp
+  TT.vcxproj -> F:\Exercise\Qt\HelloWorld\TestQTreeWidgetExercise\TT\x64\Debug\TT.exe

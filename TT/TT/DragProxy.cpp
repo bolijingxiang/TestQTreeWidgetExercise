@@ -1,6 +1,8 @@
 #include "DragProxy.h"
 #include <qpoint.h>
 #include <qevent.h>
+#include <qdebug.h>
+#include "ExerciseWidget.h"
 
 DragProxy::DragProxy(QWidget *parent)
 	: QObject((QObject*)parent)
@@ -15,6 +17,8 @@ DragProxy::DragProxy(QWidget *parent)
 	m_regionPressed = Unknown;
 
 	m_cursorTimerId = 0;
+	connect(this, &DragProxy::sendUpdate, this, [=]() {});
+	
 }
 
 DragProxy::~DragProxy()
@@ -49,12 +53,15 @@ void DragProxy::UpdateGeometry(int x, int y, int w, int h)
 
 bool DragProxy::eventFilter(QObject* obj, QEvent* event)
 {
+	if (ExerciseWidget::drawingLine)return QObject::eventFilter(obj, event);
 	QEvent::Type eventType = event->type();
 	if (eventType == QEvent::MouseMove)
 	{
 		QMouseEvent* mouseEvent = (QMouseEvent*)event;
 		QPoint curPosLocal = mouseEvent->pos();
-		DragProxy::WidgetRegion regionType = HitTest(curPosLocal);
+		//qDebug() << "m_proxyWidget->pos():" << m_proxyWidget->pos();
+		//DragProxy::WidgetRegion regionType = HitTest(curPosLocal);
+		DragProxy::WidgetRegion regionType = Inner;
 
 		QPoint curPosGlobal = m_proxyWidget->mapToGlobal(curPosLocal);
 
@@ -91,7 +98,10 @@ bool DragProxy::eventFilter(QObject* obj, QEvent* event)
 
 			if (m_regionPressed == Inner)
 			{
-				m_proxyWidget->move(m_originGeo.topLeft() + curPosGlobal - m_originPosGlobal);
+				//if (curPosLocal.x() > m_left&&curPosLocal.y() > m_top&&curPosLocal.y() < m_proxyWidget->height() - m_bottom && curPosLocal.x() < m_proxyWidget->width() - m_right)
+				{
+					m_proxyWidget->move(m_originGeo.topLeft() + curPosGlobal - m_originPosGlobal);
+				}
 			}
 			else if (m_regionPressed == Top)
 			{
@@ -143,7 +153,8 @@ bool DragProxy::eventFilter(QObject* obj, QEvent* event)
 			m_mousePressed = true;
 
 			QPoint curPos = mouseEvent->pos();
-			m_regionPressed = HitTest(curPos);
+			//m_regionPressed = HitTest(curPos);
+			m_regionPressed = Inner;
 
 			m_originPosGlobal = m_proxyWidget->mapToGlobal(curPos);
 			m_originGeo = m_proxyWidget->geometry();
@@ -174,6 +185,7 @@ bool DragProxy::eventFilter(QObject* obj, QEvent* event)
 		{
 			if (m_regions[Inner].contains(m_proxyWidget->mapFromGlobal(QCursor::pos())))
 			{
+				qDebug() << "HHellowp";
 				m_proxyWidget->setCursor(Qt::ArrowCursor);
 				StopCursorTimer();
 			}
